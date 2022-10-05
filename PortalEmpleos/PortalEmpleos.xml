@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PortalEmpleos</name>
+    </assembly>
+    <members>
+        <member name="T:PortalEmpleos.Controllers.AccountController">
+            <summary>
+            Servicio para administrar cuentas, inicio de sesión, etc.
+            </summary>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.AccountController.#ctor(Bussines.Auth.AuthRepository,Bussines.Shared.IMailService,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="authRepository"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.AccountController.Login(Objects.Accounts.LoginViewModel)">
+            <summary>
+            Inicio de sesión
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.AccountController.Register(Objects.Accounts.RegisterUserViewModel)">
+            <summary>
+            Registro de usuario con contraseña
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.AccountController.RequestPasswordReset(Objects.Accounts.RequestPassword)">
+            <summary>
+            Solicitar cambio de contraseña
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.AccountController.ChangePassword(Objects.Accounts.RequestPasswordReset)">
+            <summary>
+            Cambiar contraseña
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PortalEmpleos.Controllers.ChatController">
+            <summary>
+            Servicio para administrar la tabla de personas
+            </summary>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.ChatController.#ctor(Bussines.Administracion.ChatRepository)">
+            <summary>
+            
+            </summary>
+            <param name="profileRepository"></param>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.ChatController.GetPersonas(System.Int32)">
+            <summary>
+            Obtener el listado de Personas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PortalEmpleos.Controllers.PersonaController">
+            <summary>
+            Servicio para administrar la tabla de personas
+            </summary>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.PersonaController.GetPersonas">
+            <summary>
+            Obtener el listado de Personas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PortalEmpleos.Controllers.ProfileController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.ProfileController.#ctor(Bussines.Auth.ProfileRepository)">
+            <summary>
+            
+            </summary>
+            <param name="profileRepository"></param>
+        </member>
+        <member name="M:PortalEmpleos.Controllers.ProfileController.Get">
+            <summary>
+            Obtener perfil del usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PortalEmpleos.Controllers.UsuarioController">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>
