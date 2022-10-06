@@ -78,6 +78,7 @@ namespace PortalEmpleos
             services.AddScoped<OfertasLaboralesRepository>();
             services.AddScoped<DetailReository>();
             services.AddScoped<EmpleadosRepository>();
+            services.AddScoped<SuscripcionesRepository>();
 
             services.AddMvc(options =>
             {

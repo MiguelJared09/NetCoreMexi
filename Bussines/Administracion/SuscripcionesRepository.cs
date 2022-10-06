@@ -29,6 +29,17 @@ namespace Bussines.Administracion
             }
         }
 
+        public async Task<Suscripcion> UpdateSuscripcion (Suscripcion model)
+        {
+            using (var db = Connection)
+            {
+                db.Update(model);
+                await db.SaveChangesAsync();
+                return model;
+            }
+            
+        }
+
     }
     
    

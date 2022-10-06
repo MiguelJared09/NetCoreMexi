@@ -35,5 +35,22 @@ namespace PortalEmpleos.Controllers
                 return Ok(new ResultViewModel(e));
             }
         }
+        /// <sumary>
+        ///  proceso para modificar la suscripcion del usuario
+        /// <param name = "model" ></param> 
+        /// </sumary>
+        [HttpPost("modificarSuscripcion")]
+        public async Task<IActionResult> UpdateSuscripcion([FromBody] Suscripcion model)
+        {
+            try
+            {
+                return Ok(new ResultViewModel<Suscripcion>(await repository.UpdateSuscripcion(model)));
+            }
+            catch (Exception e)
+            {
+                return Ok(new ResultViewModel(e));
+            }
+
+        }
     }
 }
