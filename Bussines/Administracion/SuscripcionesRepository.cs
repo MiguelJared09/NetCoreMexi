@@ -39,7 +39,22 @@ namespace Bussines.Administracion
             }
             
         }
+        public async Task<IEnumerable<Suscripcion>> GetSuscripciones(int id)
+        {
+            using (var db = Connection)
+            {
+                List<string> sWhere = new List<string>();
+                sWhere = new List<string>
+                {
+                    $"{SuscripcionSchema.intIdSuscription} = {id}",
+                    "1=1"
+                };
 
+                return await db.Query<Suscripcion>($"SELECT * FROM { SuscripcionSchema.View } WHERE " + string.Join(" AND ", sWhere) +
+                $" ORDER BY {SuscripcionSchema.intIdSuscription}", id
+                );
+            }
+        }
     }
     
    
