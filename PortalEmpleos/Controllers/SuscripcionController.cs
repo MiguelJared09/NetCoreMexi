@@ -52,5 +52,17 @@ namespace PortalEmpleos.Controllers
             }
 
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetExperienciaLaboralEmpleado(int id)
+        {
+            try
+            {
+                return Ok(new ResultViewModel<IEnumerable<Suscripcion>>(await repository.GetSuscripciones(id)));
+            }
+            catch (Exception e)
+            {
+                return Ok(new ResultViewModel(e));
+            }
+        }
     }
 }

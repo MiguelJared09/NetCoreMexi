@@ -126,12 +126,12 @@ namespace PortalEmpleos
                 {
                     Title = "Api Portal Empleos REST",
                     Version = "v1",
-                    Description = "Prospectiva API",
+                    Description = "Portal Empleos API",
                     Contact = new OpenApiContact
                     {
-                        Name = "",
+                        Name = "Mexi Trabajo",
                         Email = string.Empty,
-                        Url = new Uri("https://prospectiva.com"),
+                        Url = new Uri("https://mexitrabajo.com"),
                     }
 
                 });
