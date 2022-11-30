@@ -18,6 +18,7 @@ namespace Db.Schemas
         public static string intStatus = "intStatus";
         public static string intTipoTrabajo = "intTipoTrabajo";
         public static string intgenero = "intgenero";
+        public static string ubicacion = "ubicacion";
         public static string View = "vwservices";
 
     }
@@ -29,5 +30,14 @@ namespace Db.Schemas
         public static string intIdUser = "intIdUser";
         public static string dtFechaPostulacion = "dtFechaPostulacion";
         public static string View = "vwpostulaciones";
+    }
+    public class SolicitudServiciosSchema
+    {
+        public static string View = "vwSolicitudes";
+        public static string idEmp = "IdUserEmpleado";
+        public static string idEmpleador = "idUserEmpleador";
+        public static string Solicitud = "Solicitud";
+        public static string Servicio = "Servicio";
+
     }
 }

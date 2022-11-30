@@ -18,6 +18,7 @@ namespace Objects.Accounts
 
         public bool Remember { get; set; }
     }
+    
 
     public class RegisterUserViewModel
     {

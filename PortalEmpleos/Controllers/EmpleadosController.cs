@@ -23,6 +23,7 @@ namespace PortalEmpleos.Controllers
         {
             this.repository = repository;
         }
+       
         public readonly EmpleadosRepository repository;
         //<summary>
         // Obtener el detalle del empleado
@@ -35,6 +36,24 @@ namespace PortalEmpleos.Controllers
             {
 
                 return Ok(new ResultViewModel<IEnumerable<EmpeladosViewResult>>(await repository.GetServiciosEmpleados(value, id, genero)));
+            }
+            catch (Exception e)
+            {
+                return Ok(new ResultViewModel(e));
+            }
+        }
+        /// <summary>
+        /// activar o desactivar servicios
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost("desactivarservicios/")]
+        public async Task<IActionResult> DesactivarServicios([FromBody]ServiciosD model) 
+        { 
+            try
+            {
+
+                return Ok(new ResultViewModel<IEnumerable<ServiciosD>>(await repository.DesactivarServicios(model)));
             }
             catch (Exception e)
             {
@@ -57,12 +76,46 @@ namespace PortalEmpleos.Controllers
                 return Ok(new ResultViewModel(e));
             }
         }
+        /// <summary>
+        /// obtener solicitudes de servicios
+        /// </summary>
         
-        //<summary>
-        // publicar servicios
-        //</summary>
-        //<returns></returns>
-        [HttpPost("Crear")]
+        /// <returns></returns>
+        [HttpGet("solicitudes/{id}")]
+        public async Task<IActionResult> GetSolicitudes(int id, int idEmpleador)
+        {
+            try
+            {
+                return Ok(new ResultViewModel<IEnumerable<SolicitudesViewResult>>(await repository.GetSolicitudes(id, idEmpleador)));
+            }
+            catch (Exception e)
+            {
+                return Ok(new ResultViewModel(e));
+            }
+        }
+        /// <summary>
+        /// obtener las solicitudes de un usuario especifico
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="idEmpleador"></param>
+        /// <returns></returns>
+        [HttpGet("MisSolicitudes/{id}")]
+        public async Task<IActionResult> getMisSolicitudes(int id)
+        {
+            try
+            {
+                return Ok(new ResultViewModel<IEnumerable<SolicitudesViewResult>>(await repository.getMisSolicitudes(id)));
+            }
+            catch (Exception e)
+            {
+                return Ok(new ResultViewModel(e));
+            }
+        }   
+            //<summary>
+            // publicar servicios
+            //</summary>
+            //<returns></returns>
+            [HttpPost("CrearServicio")]
         public async Task<IActionResult> CreateService([FromBody] EmpleadosModel model)
         {
             try
@@ -108,22 +161,7 @@ namespace PortalEmpleos.Controllers
             }
 
         }
-        //<summary>
-        // Obtener el listado de postulaciones del usuario
-        //</summary>
-        //<returns></returns>
-        [HttpGet("Postulacion/{id}")]
-        public async Task<IActionResult> GetPostulacionesUser(int id)
-        {
-            try
-            {
-                return Ok(new ResultViewModel<IEnumerable<EmpleadorsViewResult>>(await repository.GetPostulaciones(id)));
-            }
-            catch (Exception e)
-            {
-                return Ok(new ResultViewModel(e));
-            }
-        }
+        
     }
 }
 

@@ -46,7 +46,7 @@ namespace Bussines.Administracion
                 List<string> sWhere = new List<string>();
                 sWhere = new List<string>
                 {
-                    $"{SuscripcionSchema.intIdSuscription} = {id}",
+                    $"{SuscripcionSchema.intIdUser} = {id}",
                     "1=1"
                 };
 

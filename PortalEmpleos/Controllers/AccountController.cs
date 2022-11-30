@@ -48,6 +48,7 @@ namespace PortalEmpleos.Controllers
             {
                 await Task.Delay(1500);
                 return Ok(new ResultViewModel<string>(await repository.Login(user)));
+
             }
             catch (Exception e)
             {

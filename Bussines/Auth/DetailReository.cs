@@ -43,7 +43,7 @@ namespace Bussines.Auth
         }
 
         // funcion para conseguir el detalle del usuario
-        public async Task<IEnumerable<Detail>> GetDetalleRegistro(int id)
+        public async Task<IEnumerable<DetailView>> GetDetalleRegistro(int id)
         {
             using (var db = Connection)
             {
@@ -55,9 +55,12 @@ namespace Bussines.Auth
                     "1=1"
                 };
 
-                return await db.Query<Detail>($"SELECT * FROM { DetailSchema.Table } WHERE " + string.Join(" AND ", sWhere) +
+                return await db.Query<DetailView>($"SELECT * FROM { DetailSchema.View } WHERE " + string.Join(" AND ", sWhere) +
                 $" ORDER BY {DetailSchema.IntidDetalle}", id
                 );
+                //agregar nivel estudios 
+                //carrera y habilidades(informacion general) tipo de user empleado habilidades empleador informacion general 
+                //disponibilidad
             }
         }
 

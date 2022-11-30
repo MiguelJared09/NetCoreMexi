@@ -21,4 +21,17 @@ namespace Db.Schemas
         public static string IntTipoTrabajo = "IntTipoTrabajo";
         public static string View = "vwOfertasLaborales";
     }
+    public class PostulacionesOfertasSchema
+    {
+        public static string Table = "postulacionvacante";
+        public static string View = "vwpostulaciones";
+        public static string intId = "intId";
+        public static string intIdOfertaLaboral = "intIdOfertaLaboral";
+        public static string intIdUser = "intIdUser";
+        public static string UserName = "UserName";
+        public static string varNombre = "varNombre";
+        public static string intDisponibilidad = "Disponibilidad";
+        public static string varPuesto = "varPuesto";
+        public static string dtFechaPostulacion = "dtFechaPostulacion";
+    }
 }

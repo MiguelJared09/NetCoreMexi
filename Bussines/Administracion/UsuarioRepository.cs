@@ -22,9 +22,5 @@ namespace Bussines.Administracion
         private new readonly IConfiguration configuration;
         private readonly UserManager<Usuario> userManager;
         private readonly RoleManager<Rol> rolManager;
-
-
-       
-
     }
 }

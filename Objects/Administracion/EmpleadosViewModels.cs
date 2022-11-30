@@ -17,15 +17,20 @@ namespace Objects.Administracion
     {
 
     }
-    public class EmpleadorsViewResult : postulacionView
-    {
-
-    }
+   
     public class EmpleadosResult : EmpleadosModel
     {
         
     }
+    public class ServiciosD : Db.Models.DesactivarServicios
+    {
+
+    }
     public class EmpeladosViewResult : EmpleadosView
+    {
+
+    }
+    public class SolicitudesViewResult : SolicitudView
     {
 
     }

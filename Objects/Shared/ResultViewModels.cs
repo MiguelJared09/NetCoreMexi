@@ -14,6 +14,7 @@ namespace Objects.Shared
         {
             Result = true;
             Data = data;
+            
         }
 
         public bool Result { get; set; }

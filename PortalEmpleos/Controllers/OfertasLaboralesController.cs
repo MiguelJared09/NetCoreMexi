@@ -23,6 +23,11 @@ namespace PortalEmpleos.Controllers
         }
         public readonly OfertasLaboralesRepository repository;
 
+        /// <summary>
+        /// crear oferta laboral
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost("Crear")]
         public async Task<IActionResult> CreateOfertaLaboral([FromBody] OfertasLaborales model)
         {
@@ -69,6 +74,25 @@ namespace PortalEmpleos.Controllers
             }
         }
         /// <summary>
+        /// obtener las postulaciones de una ofertalaboral
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("postulaciones/{id}")]
+        public async Task<IActionResult> GetPostulaciones(int id, int idUser)
+        {
+            try
+            {
+                return Ok(new ResultViewModel<IEnumerable<PostulacionV>>(await repository.GetPostulaciones(id, idUser)));
+            }
+            catch(Exception e)
+            {
+                return Ok(new ResultViewModel(e));
+            }
+        }
+
+
+        /// <summary>
         /// Obtener el listado de experiencia laboral del empleado
         /// </summary>
         /// <returns></returns>
@@ -78,12 +102,45 @@ namespace PortalEmpleos.Controllers
             try
             {
                 
-                return Ok(new ResultViewModel<IEnumerable<OfertasLaboralesResult>>(await repository.GetOfertasLaboralesBusqueda(value, id)));
+                return Ok(new ResultViewModel<IEnumerable<OfertasViewResult>>(await repository.GetOfertasLaboralesBusqueda(value, id)));
             }
             catch (Exception e)
             {
                 return Ok(new ResultViewModel(e));
             }
         }
+        /// <summary>
+        /// crear oferta laboral
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost("SolicitarServicios")]
+        public async Task<IActionResult> SolicitudServicio([FromBody] Servicios model)
+        {
+            try
+            {
+                return Ok(new ResultViewModel<Servicios>(await repository.CreateSolicitudService(model)));
+            }
+            catch (Exception e)
+            {
+                return Ok(new ResultViewModel(e));
+            }
+        }
+        /// <summary>
+        /// desactivar yactivar ofertas laborales
+        /// </summary>
+        [HttpPost("desactivarOferta")]
+        public async Task<IActionResult> desactivarPostulacion([FromBody] postulacionD model)
+        {
+            try
+            {
+                return Ok(new ResultViewModel<IEnumerable<postulacionD>>(await repository.desactivarPostulacion(model)));
+            }
+            catch (Exception e)
+            {
+                return Ok(new ResultViewModel(e));
+            }
+        }
+
     }
 }

@@ -30,6 +30,10 @@ namespace Db.Schemas
         public static string varNoTelfR2 = "varNoTelfR2";
         public static string varRazonSocial = "varRazonSocial";
         public static string intStatus = "intStatus";
+        public static string intEstudios = "intEstudios";
+        public static string intDisponibilidad = "intDisponibilidad";
+        public static string descripcion = "descripcion";
+        public static string Email = "Email";
         public static string View = "vw_detalleuser";
     }
     public class DetailSchemaModify

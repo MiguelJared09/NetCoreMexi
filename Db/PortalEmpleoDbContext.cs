@@ -27,14 +27,16 @@ namespace Db.Models
         public DbSet<Empleados> serviciosempleados { get; set; }
         public DbSet<postulacion> postulacionvacante { get; set; }
         public DbSet<Detail> detalleuser { get; set; }
-        public DbSet<Suscripcion> usuariosuscricion { get; set; }
+        public DbSet<Suscripcion> Suscripciones { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Chat> Chat { get; set; }
         public DbSet<ChatMensajes> ChatMensajes { get; set; }
+        public DbSet<SolicitarServicio> solicitudes { get; set; }
         public DbSet<Buzon> Buzon { get; set; }
         public DbSet<BuzonMensajes> BuzonMensajes { get; set; }
         public DbSet<ExperienciaLaboral> ExperienciaLaboral { get; set; }
         public DbSet<OfertasLaborales> OfertasLaborales { get; set; }
+        
         public DbSet<DosPasos> DosPasos { get; set; }
         #region Dapper
         /// <summary>

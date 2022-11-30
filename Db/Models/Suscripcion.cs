@@ -10,7 +10,7 @@ namespace Db.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int intIdSuscription { get; set; }
+        public int intIdSuscripcionUser { get; set; }
         public int intIdUser { get; set; }
         public int intIdSuscripcion { get; set; }
         public DateTime dtFecha { get; set; }

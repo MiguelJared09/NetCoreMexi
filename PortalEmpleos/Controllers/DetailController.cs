@@ -33,7 +33,7 @@ namespace PortalEmpleos.Controllers
         {
             try
             {
-                return Ok(new ResultViewModel<IEnumerable<Detail>>(await repository.GetDetalleRegistro(id)));
+                return Ok(new ResultViewModel<IEnumerable<DetailView>>(await repository.GetDetalleRegistro(id)));
             }
             catch (Exception e)
             {

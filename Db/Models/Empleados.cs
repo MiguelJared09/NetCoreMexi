@@ -22,6 +22,13 @@ namespace Db.Models
         
 
     }
+    public class DesactivarServicios
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int intIdServicio { get; set; }
+        public int intStatus { get; set; }
+    }
     public class EmpleadosView
     {
         [Key]
@@ -38,6 +45,21 @@ namespace Db.Models
         public string varAMatern { get; set; }
         public int intStatus { get; set; }
         public int intTipoTrabajo { get; set; }
+        public string ubicacion { get; set; }
+    }
+    public class SolicitudView
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Solicitud { get; set; }
+        public int Servicio { get; set; }
+        public string Trabajo { get; set; }
+        public int idUserEmpleado { get; set; }
+        public int idUserEmpleador { get; set; }
+        public string nombreEmpresa { get; set; }
+        public string nombreResponsable { get; set; }
+        public int Genero { get; set; }
+        public string ubicacion { get; set; }
     }
     public class postulacion
     {
@@ -49,17 +71,7 @@ namespace Db.Models
         public DateTime dtFechaPostulacion { get; set; }
 
     }
-    public class postulacionView
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int intId { get; set; }
-        public int intIdUser { get; set; }
-        public string userName { get; set; }
-        public string varNombre { get; set; }
-        public string varPuesto { get; set; }
-        public DateTime dtFechaPostulacion { get; set; }
-    }
+    
 }
 
 
